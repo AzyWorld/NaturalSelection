@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/HUD.gd" type="Script" id=1]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="count" type="Line2D" parent="."]
+width = 2.0
+default_color = Color( 1, 0, 0, 1 )
+
+[node name="speed" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+width = 2.0
+default_color = Color( 0, 0.164706, 1, 1 )
+
+[node name="Entrys" type="VBoxContainer" parent="."]
+anchor_left = 0.8
+anchor_right = 1.0
+anchor_bottom = 0.3
+margin_left = -0.0640259
+
+[node name="spawn_cd" type="LineEdit" parent="Entrys"]
+margin_right = 204.0
+margin_bottom = 24.0
+text = "0.5"
+placeholder_text = "spawn cd"
+
+[node name="spawn_count" type="LineEdit" parent="Entrys"]
+margin_top = 28.0
+margin_right = 204.0
+margin_bottom = 52.0
+text = "2"
+placeholder_text = "spawn count"
+
+[node name="food_limit" type="LineEdit" parent="Entrys"]
+margin_top = 56.0
+margin_right = 204.0
+margin_bottom = 80.0
+text = "150"
+placeholder_text = "food limit"
+
+[node name="mutation_chance" type="LineEdit" parent="Entrys"]
+margin_top = 84.0
+margin_right = 204.0
+margin_bottom = 108.0
+text = "0.2"
+placeholder_text = "mutation chance 0-1 "
+
+[node name="mutation_range" type="LineEdit" parent="Entrys"]
+margin_top = 112.0
+margin_right = 204.0
+margin_bottom = 136.0
+text = "2"
+placeholder_text = "mutation range 0-10"
+
+[node name="lifetime" type="LineEdit" parent="Entrys"]
+margin_top = 140.0
+margin_right = 204.0
+margin_bottom = 164.0
+text = "25"
+placeholder_text = "lifetime"
+
+[node name="foodNeed" type="LineEdit" parent="Entrys"]
+margin_top = 168.0
+margin_right = 204.0
+margin_bottom = 192.0
+text = "2"
+placeholder_text = "food need"
+
+[node name="Button" type="Button" parent="Entrys"]
+margin_top = 196.0
+margin_right = 204.0
+margin_bottom = 216.0
+text = "apply"
+
+[node name="sense" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+width = 5.0
+default_color = Color( 0, 1, 0.25098, 1 )
+
+[node name="hunters" type="Line2D" parent="."]
+
+[connection signal="pressed" from="Entrys/Button" to="." method="_on_Button_pressed"]
